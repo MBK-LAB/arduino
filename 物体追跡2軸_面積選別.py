@@ -3,7 +3,7 @@
 
  
 # pyFirmataを使ったFirmataにより、arduinoを制御
-
+# 色マスクからの輪郭検出を行い、輪郭面積による条件分けを行う
 
 import sys
 import time
