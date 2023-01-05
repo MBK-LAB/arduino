@@ -1,0 +1,309 @@
+#include <Servo.h> 
+ 
+Servo myservo;  
+Servo myservo2;
+int pos = 0;
+
+void setup() {
+  Serial.begin(9600);//シリアル通信を9600bpsで初期化
+  
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo2.attach(5);
+  myservo.write(110);
+  myservo2.write(30);
+}
+
+void loop()
+{  for(int n=0; n<6; n++)
+  { double x,y,L1,L2;
+    float a,b,c,d;
+    float theta1,theta2;
+    float servotheta1,servotheta2;
+    x = 20-2*n;
+    y = 0.0;
+    L1 = 15.0;
+    L2 = 15.0;
+
+    a =acos((sq(x)+sq(y)+sq(L1)-sq(L2))/(2*(L1)*sqrt(sq(x)+sq(y))))-atan(y/x);
+    b =atan((y-L1*(sin(a)))/(x-L1*(cos(a))))-a;
+    
+    c = L1*cos(a)+L2*cos(a+b);
+    d = L1*sin(a)+L2*sin(a+b);
+    
+    theta1 = degrees(a);
+    theta2 = degrees(b);
+    
+    servotheta1 = 110-(90-theta1);
+    servotheta2 = 30-(theta1+theta2);
+    Serial.println(a);
+    Serial.println(b);
+    Serial.println(theta1);
+    Serial.println(theta2);
+    Serial.println(servotheta1);
+    Serial.println(servotheta2);
+    
+    int i1,i2;
+    i1 = servot#include <Servo.h> 
+ 
+Servo myservo;  
+Servo myservo2;
+int pos = 0;
+
+void setup() {
+  Serial.begin(9600);//シリアル通信を9600bpsで初期化
+  
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo2.attach(5);
+  myservo.write(110);
+  myservo2.write(30);
+}
+
+void loop()
+{  for(int n=0; n<6; n++)
+  { double x,y,L1,L2;
+    float a,b,c,d;
+    float theta1,theta2;
+    float servotheta1,servotheta2;
+    x = 20-2*n;
+    y = 0.0;
+    L1 = 15.0;
+    L2 = 15.0;
+
+    a =acos((sq(x)+sq(y)+sq(L1)-sq(L2))/(2*(L1)*sqrt(sq(x)+sq(y))))-atan(y/x);
+    b =atan((y-L1*(sin(a)))/(x-L1*(cos(a))))-a;
+    
+    c = L1*cos(a)+L2*cos(a+b);
+    d = L1*sin(a)+L2*sin(a+b);
+    
+    theta1 = degrees(a);
+    theta2 = degrees(b);
+    
+    servotheta1 = 110-(90-theta1);
+    servotheta2 = 30-(theta1+theta2);
+    Serial.println(a);
+    Serial.println(b);
+    Serial.println(theta1);
+    Serial.println(theta2);
+    Serial.println(servotheta1);
+    Serial.println(servotheta2);
+    #include <Servo.h> 
+ 
+Servo myservo;  
+Servo myservo2;
+int pos = 0;
+
+void setup() {
+  Serial.begin(9600);//シリアル通信を9600bpsで初期化
+  
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo2.attach(5);
+  myservo.write(110);
+  myservo2.write(30);
+}#include <Servo.h> 
+ 
+Servo myservo;  
+Servo myservo2;
+int pos = 0;
+
+void setup() {
+  Serial.begin(9600);//シリアル通信を9600bpsで初期化
+  
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo2.attach(5);
+  myservo.write(110);
+  myservo2.write(30);
+}
+
+void loop()
+{  for(int n=0; n<6; n++)
+  { double x,y,L1,L2;
+    float a,b,c,d;
+    float theta1,theta2;
+    float servotheta1,servotheta2;
+    x = 20-2*n;
+    y = 0.0;
+    L1 = 15.0;
+    L2 = 15.0;
+
+    a =acos((sq(x)+sq(y)+sq(L1)-sq(L2))/(2*(L1)*sqrt(sq(x)+sq(y))))-atan(y/x);
+    b =atan((y-L1*(sin(a)))/(x-L1*(cos(a))))-a;
+    
+    c = L1*cos(a)+L2*cos(a+b);
+    d = L1*sin(a)+L2*sin(a+b);
+    
+    theta1 = degrees(a);
+    theta2 = degrees(b);
+    
+    servotheta1 = 110-(90-theta1);
+    servotheta2 = 30-(theta1+theta2);
+    Serial.println(a);
+    Serial.println(b);
+    Serial.println(theta1);
+    Serial.println(theta2);
+    Serial.println(servotheta1);
+    Serial.println(servotheta2);
+    
+    int i1,i2;
+    i1 = servotheta1;
+    i2 = servotheta2;
+    Serial.println(n);
+    for (pos = 110; pos > i1; pos -= 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+    
+    for (pos = 30; pos < i2; pos += 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }
+    
+    delay(5000);
+    
+    for (pos = i2; pos > 30; pos -= 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }    
+    
+    for (pos = i1; pos < 110; pos += 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+
+    delay(5000);
+  }
+}
+ 
+
+void loop()
+{  for(int n=0; n<6; n++)
+  { double x,y,L1,L2;
+    float a,b,c,d;
+    float theta1,theta2;
+    float servotheta1,servotheta2;
+    x = 20-2*n;
+    y = 0.0;
+    L1 = 15.0;
+    L2 = 15.0;
+
+    a =acos((sq(x)+sq(y)+sq(L1)-sq(L2))/(2*(L1)*sqrt(sq(x)+sq(y))))-atan(y/x);
+    b =atan((y-L1*(sin(a)))/(x-L1*(cos(a))))-a;
+    
+    c = L1*cos(a)+L2*cos(a+b);
+    d = L1*sin(a)+L2*sin(a+b);
+    
+    theta1 = degrees(a);
+    theta2 = degrees(b);
+    
+    servotheta1 = 110-(90-theta1);
+    servotheta2 = 30-(theta1+theta2);
+    Serial.println(a);
+    Serial.println(b);
+    Serial.println(theta1);
+    Serial.println(theta2);
+    Serial.println(servotheta1);
+    Serial.println(servotheta2);
+    
+    int i1,i2;
+    i1 = servotheta1;
+    i2 = servotheta2;
+    Serial.println(n);
+    for (pos = 110; pos > i1; pos -= 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+    
+    for (pos = 30; pos < i2; pos += 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }
+    
+    delay(5000);
+    
+    for (pos = i2; pos > 30; pos -= 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }    
+    
+    for (pos = i1; pos < 110; pos += 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+
+    delay(5000);
+  }
+}
+ 
+    int i1,i2;
+    i1 = servotheta1;
+    i2 = servotheta2;
+    Serial.println(n);
+    for (pos = 110; pos > i1; pos -= 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+    
+    for (pos = 30; pos < i2; pos += 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }
+    
+    delay(5000);
+    
+    for (pos = i2; pos > 30; pos -= 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }    
+    
+    for (pos = i1; pos < 110; pos += 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+
+    delay(5000);
+  }
+}
+ heta1;
+    i2 = servotheta2;
+    Serial.println(n);
+    for (pos = 110; pos > i1; pos -= 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+    
+    for (pos = 30; pos < i2; pos += 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }
+    
+    delay(5000);
+    
+    for (pos = i2; pos > 30; pos -= 1)
+    {
+      myservo2.write(pos);
+      delay(20);
+    }    
+    
+    for (pos = i1; pos < 110; pos += 1)
+    {
+      myservo.write(pos);
+      delay(20);
+    }
+
+    delay(5000);
+  }
+}
+ 
